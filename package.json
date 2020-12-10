@@ -1,6 +1,6 @@
 {
   "name": "elm-tailwind-postcss",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Postcss plugin to generate Tailwindcss classes into Elm functions",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,7 @@
   ],
   "author": "Sophea Pov <pov.sophea3@gmail.com>",
   "license": "MIT",
+  "repository": "psophea/elm-tailwind-postcss",
   "dependencies": {
     "autoprefixer": "^9.8.6",
     "postcss": "^7.0.35",
