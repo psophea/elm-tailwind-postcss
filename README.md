@@ -14,44 +14,44 @@ Below is what view function might look like using Tailwind function.
 view : Model -> Html Msg
 view model =
     Html.div 
-      [ T.h_screen
-      , T.w_screen
-      , T.flex
-      , T.justify_center
-      , T.items_center
-      , T.bg_gray_200 
-      ]
-      [ Html.div 
-        []
-        [ Html.button
-          [ E.onClick Decrement
-          , T.px_2
-          , T.px_4
-          , T.text_white
-          , T.bg_blue_500
-          , T.w_full
-          ]
-          [ Html.text "-" 
-          ]
-          , Html.div
-            [ T.text_2xl
-            , T.text_center
-            , T.my_4
-            ]
-            [ Html.text (String.fromInt model) 
-            ]
-          , Html.button
-            [ E.onClick Increment
-            , T.px_2
-            , T.px_4
-            , T.text_white
-            , T.bg_blue_500
-            , T.w_full
-            ]
-            [ Html.text "+" 
-            ]
-          ]
+        [ T.h_screen
+        , T.w_screen
+        , T.flex
+        , T.justify_center
+        , T.items_center
+        , T.bg_gray_200 
         ]
+        [ Html.div 
+            []
+            [ Html.button
+                [ E.onClick Decrement
+                , T.px_2
+                , T.px_4
+                , T.text_white
+                , T.bg_blue_500
+                , T.w_full
+                ]
+                [ Html.text "-" 
+                ]
+                , Html.div
+                    [ T.text_2xl
+                    , T.text_center
+                    , T.my_4
+                    ]
+                    [ Html.text (String.fromInt model) 
+                    ]
+                , Html.button
+                    [ E.onClick Increment
+                    , T.px_2
+                    , T.px_4
+                    , T.text_white
+                    , T.bg_blue_500
+                    , T.w_full
+                    ]
+                    [ Html.text "+" 
+                    ]
+              ]
+          ]
 ```
 
 ## Installation
@@ -100,7 +100,7 @@ const development = {
         ],
 };
 
-// first build will bundle Elm, and Tailwind but didn't purge CSS yet.
+// first build will bundle Elm, and Tailwind but doesn't purge CSS yet.
 const firstbuild = {
     plugins:
         [ tailwindcss
@@ -127,9 +127,9 @@ else if (process.env.NODE_ENV === "production") {
 }
 ```
 
-### tailwind.css.config
+### tailwind.config.config
 
-Purge feature in Tailwind config has been disabled to avoid warning message as we have configured it in postcss config already.
+Purge feature in Tailwind config has been disabled to hide warning message as we have configured it in postcss config already.
 
 ```js
 module.exports = {
@@ -215,13 +215,13 @@ The first build will output the result into `tmp` directory which contains all c
 set NODE_ENV=production&&npx parcel build --out-dir dist --public-url ./ ./tmp/index.html
 ```
 
-The last build will get result from the first build and purge all unused classes and output into `dist` directory.
+The last build will get result from the first build, purge all unused classes and output into `dist` directory.
 
 
 
 ## Syntax Changes
 
-As Elm has restriction for function name, some Tailwind classes will be converted to be valid Elm function name.
+As Elm has restriction for function name, some Tailwind classes will be converted into valid Elm function name.
 
 ```elm
 -- starts with number becomes "i_": 2xl -> i_2xl
